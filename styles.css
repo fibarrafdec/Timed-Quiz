@@ -1,14 +1,77 @@
+body {
+    background-color: #483d8b;
+}
+
+header img {
+    display: block;
+    margin: auto;
+    height: 300px;
+    width: 300px;
+}
+
 .title {
     text-align: center;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 40px;
-    color: blueviolet;
+    color: navy;
     background-color: gray;
+    border: solid navy 5px;
+    padding: 30px;
+    margin: 20px;
 }
 
-.title:hover{
+.title:hover {
     color: aqua;
     background-color: blueviolet;
     font-style: italic;
-
+    border: solid aqua 5px;
+    padding: 30px;
+    margin: 20px;
 }
+
+.timer {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 30px;
+    color: yellow;
+    background-color: brown;
+    float: right;
+    border: solid yellow 5px;
+    height: 50px;
+    width: 150px;
+    padding: 30px;
+    margin: 20px;
+    margin-right: 40px;
+}
+
+.container {
+    justify-content: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: navy;
+    background-color: gray;
+    border: solid navy 5px;
+    padding: 30px;
+    margin: 20px;
+}
+
+.container:hover {
+    color: aqua;
+    background-color: blueviolet;
+    font-style: italic;
+    border: solid aqua 5px;
+    padding: 30px;
+    margin: 20px;
+}
+
+.subcontainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: navy;
+    background-color: gray;
+    border: solid navy 5px;
+    width: 500px;
+}
+
+
+
