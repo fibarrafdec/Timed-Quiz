@@ -16,6 +16,7 @@ header img {
     color: navy;
     background-color: gray;
     border: solid navy 5px;
+    border-radius: 15px;
     padding: 30px;
     margin: 20px;
 }
@@ -25,6 +26,7 @@ header img {
     background-color: blueviolet;
     font-style: italic;
     border: solid aqua 5px;
+    border-radius: 15px;
     padding: 30px;
     margin: 20px;
 }
@@ -36,6 +38,7 @@ header img {
     background-color: brown;
     float: right;
     border: solid yellow 5px;
+    border-radius: 15px;
     height: 50px;
     width: 150px;
     padding: 30px;
@@ -49,8 +52,13 @@ header img {
     color: navy;
     background-color: gray;
     border: solid navy 5px;
+    border-radius: 15px;
     padding: 30px;
     margin: 20px;
+}
+
+.container h1 {
+    padding-bottom: 35px;
 }
 
 .container:hover {
@@ -58,6 +66,7 @@ header img {
     background-color: blueviolet;
     font-style: italic;
     border: solid aqua 5px;
+    border-radius: 15px;
     padding: 30px;
     margin: 20px;
 }
@@ -70,6 +79,7 @@ header img {
     color: navy;
     background-color: gray;
     border: solid navy 5px;
+    border-radius: 15px;
     width: 500px;
 }
 
