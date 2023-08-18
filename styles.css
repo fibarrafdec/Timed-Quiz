@@ -86,7 +86,7 @@ header img {
     background-color: gray;
     border: solid navy 5px;
     border-radius: 15px;
-    height: 500px;
+    height: 400px;
     width: 750px;
     margin: 25px;
     padding: 30px;
@@ -102,7 +102,7 @@ header img {
     background-color: blueviolet;
     border: solid aqua 5px;
     border-radius: 15px;
-    height: 500px;
+    height: 400px;
     width: 750px;
     margin: 25px;
     padding: 30px;
@@ -117,9 +117,9 @@ header img {
     display: block;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-style: normal;
-    color: navy;
-    background-color: gray;
-    border: solid navy 5px;
+    color: aqua;
+    background-color: blueviolet;
+    border: solid aqua 5px;
     border-radius: 10px;
     height: 50px;
     width: 600px;
@@ -131,15 +131,20 @@ header img {
     display: block;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-style: italic;
-    color: aqua;
-    background-color: blueviolet;
-    border: solid aqua 5px;
     border-radius: 10px;
     height: 50px;
     width: 600px;
     margin: 10px;
     cursor: pointer;
     transition: all 0.5s;
+}
+
+.correct {
+    background-color: green;
+}
+
+.incorrect {
+    background-color: brown;
 }
 
 .buttonNext {

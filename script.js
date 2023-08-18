@@ -70,6 +70,10 @@ function showQtn(){
         button.innerHTML = answer.text;
         button.classList.add("btn");
         answerEl.appendChild(button);
+        if(answer.correct) {
+            button.dataset.correct = answer.correct;
+        }
+        button.addEventListener("click", selectAnswer);
     })
 }
 
@@ -79,6 +83,51 @@ function resetState(){
         answerEl.removeChild(answerEl.firstChild);
     }
 }
+
+function selectAnswer(event) {
+    let selectedbutton = event.target;
+    let isCorrect = selectedbutton.dataset.correct === "true";
+    if(isCorrect) {
+        selectedbutton.classList.add("correct");
+        score++;
+    }
+    else {
+        selectedbutton.classList.add("incorrect");
+    }
+    Array.from(answerEl.children).forEach(button => {
+        if(button.dataset.correct === "true"){
+            button.classList.add("correct");
+        }
+        button.disabled = true;
+    });
+    nextEl.style.display = "block";
+}
+
+function showScore(){
+    resetState();
+    questionEl.innerHTML = "You got " + {score} " out of " + {questionBox.length} + "...";
+    nextEl.innerHTML = "Do you want to play again?"
+    nextEl.style.display = "block";
+}
+
+function manageNextButton(){
+    currentQtnIndex++;
+    if(currentQtnIndex < questionBox.length){
+        showQtn();
+    }
+    else {
+        showScore();
+    }
+}
+
+nextEl.addEventListener("click", ()=>{
+    if(currentQtnIndex < questionBox.length){
+        manageNextButton();
+    }
+    else {
+        startQuiz();
+    }
+})
 
 startQuiz();
 
