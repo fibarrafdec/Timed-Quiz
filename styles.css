@@ -29,6 +29,7 @@ header img {
     border-radius: 15px;
     padding: 30px;
     margin: 20px;
+    transition: all 0.5s;
 }
 
 .timer {
@@ -72,6 +73,7 @@ header img {
     padding: 30px;
     margin: 20px;
     height: 800px;
+    transition: all 0.5s;
 }
 
 .subcontainer {
@@ -104,6 +106,69 @@ header img {
     width: 750px;
     margin: 25px;
     padding: 30px;
+    transition: all 0.5s;
+}
+
+#question {
+    font-size: 20px;
+}
+
+.btn {
+    display: block;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: normal;
+    color: navy;
+    background-color: gray;
+    border: solid navy 5px;
+    border-radius: 10px;
+    height: 50px;
+    width: 600px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    display: block;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+    color: aqua;
+    background-color: blueviolet;
+    border: solid aqua 5px;
+    border-radius: 10px;
+    height: 50px;
+    width: 600px;
+    margin: 10px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.buttonNext {
+    display: none;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: normal;
+    color: gray;
+    background-color: navy;
+    border: solid gray 5px;
+    border-radius: 10px;
+    height: 50px;
+    width: 600px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.buttonNext:hover {
+    display: block;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+    color: blueviolet;
+    background-color: aqua;
+    border: solid blueviolet 5px;
+    border-radius: 10px;
+    height: 50px;
+    width: 600px;
+    margin: 10px;
+    cursor: pointer;
+    transition: all 0.5s;
 }
 
 .secondsubcontainer img {
@@ -134,6 +199,7 @@ header img {
     border-radius: 15px;
     padding: 30px;
     margin: 20px;
+    transition: all 0.5s;
 }
 
 
