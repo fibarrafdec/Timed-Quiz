@@ -78,7 +78,7 @@ function showQtn(){
 }
 
 function resetState(){
-    nextEl.style.display = "none";
+    nextEl.style.display = "block";
     while(answerEl.firstChild){
         answerEl.removeChild(answerEl.firstChild);
     }
@@ -94,7 +94,7 @@ function selectAnswer(event) {
     else {
         selectedbutton.classList.add("incorrect");
     }
-    Array.from(answerEl.children).forEach(button => {
+    questionBox.from(answerEl.children).forEach(button => {
         if(button.dataset.correct === "true"){
             button.classList.add("correct");
         }
@@ -105,8 +105,8 @@ function selectAnswer(event) {
 
 function showScore(){
     resetState();
-    questionEl.innerHTML = "You got " + {score} " out of " + {questionBox.length} + "...";
-    nextEl.innerHTML = "Do you want to play again?"
+    questionEl.innerHTML = "Score: " + [score] + "/" + "5.";
+    nextEl.innerHTML = "Play again"
     nextEl.style.display = "block";
 }
 
@@ -130,7 +130,6 @@ nextEl.addEventListener("click", ()=>{
 })
 
 startQuiz();
-
 
 
 
