@@ -1,6 +1,8 @@
 let questionEl = document.getElementById("question");
 let answerEl = document.getElementById("main-buttons");
 let nextEl = document.getElementById("buttonNext");
+let timeEl = document.getElementById("timer");
+let secondsLeft = 50;
 
 let questionBox = [
     {
@@ -93,6 +95,7 @@ function selectAnswer(event) {
     }
     else {
         selectedbutton.classList.add("incorrect");
+        secondsLeft = secondsLeft - 5;
     }
     questionBox.from(answerEl.children).forEach(button => {
         if(button.dataset.correct === "true"){
@@ -109,6 +112,21 @@ function showScore(){
     nextEl.innerHTML = "Play again"
     nextEl.style.display = "block";
 }
+
+function setTime() {
+    let timerInterval = setInterval(function() {
+      secondsLeft--;
+        timeEl.textContent = "Time: " + secondsLeft;
+      
+        if(secondsLeft === 0) {
+          clearInterval(timerInterval);
+      
+          } 
+        
+    }, 1000);
+}
+
+setTime();
 
 function manageNextButton(){
     currentQtnIndex++;
