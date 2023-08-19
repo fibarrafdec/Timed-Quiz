@@ -15,38 +15,38 @@ let questionBox = [
     },
     
     {
-    question: "2 What is the world's most popular programming language?",
+    question: "JavaScript ______ is the set of rules, how JavaScript programs are constructed.",
     answers: [
-        { text: "HTML", correct: false},
-        { text: "CSS", correct: false},
-        { text: "JavaScript", correct: true},
+        { text: "Element", correct: false},
+        { text: "Variable", correct: false},
+        { text: "Syntax", correct: true},
     ]
     },
     
     {
-    question: "3 What is the world's most popular programming language?",
+    question: "JavaScript Variables can be declared in _ ways.",
     answers: [
-        { text: "HTML", correct: false},
-        { text: "CSS", correct: false},
-        { text: "JavaScript", correct: true},
+        { text: "2", correct: false},
+        { text: "3", correct: false},
+        { text: "4", correct: true},
     ]
     },
 
     {
-    question: "4 What is the world's most popular programming language?",
+    question: "What is the best way to declare a Variable?",
     answers: [
-        { text: "HTML", correct: false},
-        { text: "CSS", correct: false},
-        { text: "JavaScript", correct: true},
+        { text: "const", correct: false},
+        { text: "var", correct: false},
+        { text: "let", correct: true},
     ]
     },
 
     {
-    question: "5 What is the world's most popular programming language?",
+    question: "A JavaScript ______ is a block of code designed to perform a particular task.",
     answers: [
-        { text: "HTML", correct: false},
-        { text: "CSS", correct: false},
-        { text: "JavaScript", correct: true},
+        { text: "Variable", correct: false},
+        { text: "Constant", correct: false},
+        { text: "Function", correct: true},
     ]
     },
 ];
