@@ -86,7 +86,7 @@ header img {
     background-color: gray;
     border: solid navy 5px;
     border-radius: 15px;
-    height: 400px;
+    height: 450px;
     width: 750px;
     margin: 25px;
     padding: 30px;
@@ -102,11 +102,15 @@ header img {
     background-color: blueviolet;
     border: solid aqua 5px;
     border-radius: 15px;
-    height: 400px;
+    height: 450px;
     width: 750px;
     margin: 25px;
     padding: 30px;
     transition: all 0.5s;
+}
+
+.hide {
+    display: none;
 }
 
 #question {
@@ -165,6 +169,36 @@ header img {
 }
 
 .buttonNext:hover {
+    display: block;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+    font-size: 20px;
+    color: blueviolet;
+    background-color: aqua;
+    border: solid blueviolet 5px;
+    border-radius: 10px;
+    height: 50px;
+    width: 600px;
+    margin: 10px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.startButton {
+    display: block;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: normal;
+    color: gray;
+    background-color: navy;
+    border: solid gray 5px;
+    border-radius: 10px;
+    height: 50px;
+    width: 600px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.startButton:hover {
     display: block;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-style: italic;
