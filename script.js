@@ -1,7 +1,9 @@
+let startButton = document.getElementById("startButton");
 let questionEl = document.getElementById("question");
 let answerEl = document.getElementById("main-buttons");
 let nextEl = document.getElementById("buttonNext");
 let timeEl = document.getElementById("timer");
+let questionCard = document.getElementById("questionBox");
 let secondsLeft = 50;
 
 let questionBox = [
@@ -54,15 +56,27 @@ let questionBox = [
 let currentQtnIndex = 0;
 let score = 0;
 
+startButton.addEventListener("click", startQuiz);
+nextEl.addEventListener("click", () => {
+    currentQtnIndex++
+    setNextQuestion()
+})
+
 function startQuiz(){
-    currentQtnIndex = 0;
+    console.log('Started')
+    startButton.classList.add("hide")
+    questionCard.classList.remove("hide")
     score = 0;
-    nextEl.innerHTML = "Next";
+    setTime();
     showQtn();
 }
 
-function showQtn(){
+function setNextQuestion() {
     resetState();
+    showQtn()
+}
+
+function showQtn(){
     let currentQtn = questionBox[currentQtnIndex];
     let questionNumber = currentQtnIndex + 1;
     questionEl.innerHTML = questionNumber + ". " + currentQtn.question;
@@ -71,16 +85,16 @@ function showQtn(){
         let button = document.createElement("button");
         button.innerHTML = answer.text;
         button.classList.add("btn");
-        answerEl.appendChild(button);
         if(answer.correct) {
             button.dataset.correct = answer.correct;
         }
         button.addEventListener("click", selectAnswer);
+        answerEl.appendChild(button);
     })
 }
 
 function resetState(){
-    nextEl.style.display = "block";
+    nextEl.classList.add("hide");
     while(answerEl.firstChild){
         answerEl.removeChild(answerEl.firstChild);
     }
@@ -89,6 +103,7 @@ function resetState(){
 function selectAnswer(event) {
     let selectedbutton = event.target;
     let isCorrect = selectedbutton.dataset.correct === "true";
+    nextEl.classList.remove("hide");
     if(isCorrect) {
         selectedbutton.classList.add("correct");
         score++;
@@ -103,7 +118,6 @@ function selectAnswer(event) {
         }
         button.disabled = true;
     });
-    nextEl.style.display = "block";
 }
 
 function showScore(){
@@ -125,29 +139,3 @@ function setTime() {
         
     }, 1000);
 }
-
-setTime();
-
-function manageNextButton(){
-    currentQtnIndex++;
-    if(currentQtnIndex < questionBox.length){
-        showQtn();
-    }
-    else {
-        showScore();
-    }
-}
-
-nextEl.addEventListener("click", ()=>{
-    if(currentQtnIndex < questionBox.length){
-        manageNextButton();
-    }
-    else {
-        startQuiz();
-    }
-})
-
-startQuiz();
-
-
-
