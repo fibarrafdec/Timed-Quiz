@@ -36,7 +36,15 @@ This web page is planned to be used as a JavaScript timed quiz to practice some 
 
 ## Screenshots
 
+https://github.com/fibarrafdec/Timed-Quiz/blob/main/Images/Screenshots/About%20to%20start.png
 
+https://github.com/fibarrafdec/Timed-Quiz/blob/main/Images/Screenshots/First%20question.png
+
+https://github.com/fibarrafdec/Timed-Quiz/blob/main/Images/Screenshots/Right%20answer.png
+
+https://github.com/fibarrafdec/Timed-Quiz/blob/main/Images/Screenshots/Wrong%20answer.png
+
+https://github.com/fibarrafdec/Timed-Quiz/blob/main/Images/Screenshots/Final%20score.png
 
 
 ## Credits
