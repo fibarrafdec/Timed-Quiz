@@ -3,10 +3,10 @@ let questionEl = document.getElementById("question");
 let answerEl = document.getElementById("main-buttons");
 let nextEl = document.getElementById("buttonNext");
 let timeEl = document.getElementById("timer");
-let questionCard = document.getElementById("questionBox");
+let questionCard = document.getElementById("questionCard");
 let secondsLeft = 50;
 
-let questionBox = [
+let questions = [
     {
     question: "What is the world's most popular programming language?",
     answers: [
@@ -56,75 +56,18 @@ let questionBox = [
 let currentQtnIndex = 0;
 let score = 0;
 
+startButton.classList.remove("hide");
+
 startButton.addEventListener("click", startQuiz);
-nextEl.addEventListener("click", () => {
-    currentQtnIndex++
-    setNextQuestion()
-})
 
-function startQuiz(){
-    console.log('Started')
-    startButton.classList.add("hide")
-    questionCard.classList.remove("hide")
-    score = 0;
-    setTime();
+function startQuiz() {
     showQtn();
-}
-
-function setNextQuestion() {
-    resetState();
-    showQtn()
-}
-
-function showQtn(){
-    let currentQtn = questionBox[currentQtnIndex];
-    let questionNumber = currentQtnIndex + 1;
-    questionEl.innerHTML = questionNumber + ". " + currentQtn.question;
-
-    currentQtn.answers.forEach(answer => {
-        let button = document.createElement("button");
-        button.innerHTML = answer.text;
-        button.classList.add("btn");
-        if(answer.correct) {
-            button.dataset.correct = answer.correct;
-        }
-        button.addEventListener("click", selectAnswer);
-        answerEl.appendChild(button);
-    })
-}
-
-function resetState(){
-    nextEl.classList.add("hide");
-    while(answerEl.firstChild){
-        answerEl.removeChild(answerEl.firstChild);
-    }
-}
-
-function selectAnswer(event) {
-    let selectedbutton = event.target;
-    let isCorrect = selectedbutton.dataset.correct === "true";
+    setTime();
+    startButton.classList.add("hide");
     nextEl.classList.remove("hide");
-    if(isCorrect) {
-        selectedbutton.classList.add("correct");
-        score++;
-    }
-    else {
-        selectedbutton.classList.add("incorrect");
-        secondsLeft = secondsLeft - 5;
-    }
-    questionBox.from(answerEl.children).forEach(button => {
-        if(button.dataset.correct === "true"){
-            button.classList.add("correct");
-        }
-        button.disabled = true;
-    });
-}
-
-function showScore(){
-    resetState();
-    questionEl.innerHTML = "Score: " + [score] + "/" + "5.";
-    nextEl.innerHTML = "Play again"
-    nextEl.style.display = "block";
+    questionCard.classList.remove("hide");
+    currentQtnIndex = 0;
+    score = 0;
 }
 
 function setTime() {
@@ -134,8 +77,80 @@ function setTime() {
       
         if(secondsLeft === 0) {
           clearInterval(timerInterval);
-      
           } 
         
     }, 1000);
 }
+
+function showQtn(){
+    resetState();
+    let currentQuestion = questions[currentQtnIndex];
+    let questionNumber = currentQtnIndex + 1;
+    questionEl.innerHTML = questionNumber + ". " + currentQuestion.question;
+
+    currentQuestion.answers.forEach(answer => {
+        let button = document.createElement("button");
+        button.innerHTML = answer.text;
+        button.classList.add("button");
+        answerEl.appendChild(button);
+        if(answer.correct) {
+            button.dataset.correct = answer.correct;
+        }
+        button.addEventListener("click", selectAnswer);
+    })
+}
+
+function resetState(){
+    nextEl.classList.remove("hide");
+    while(answerEl.firstChild){
+        answerEl.removeChild(answerEl.firstChild);
+    }
+}
+
+function selectAnswer(event) {
+    let selectedbutton = event.target;
+    let isCorrect = selectedbutton.dataset.correct === "true";
+    if(isCorrect) {
+        selectedbutton.classList.add("correct");
+        score++;
+    }
+    else {
+        selectedbutton.classList.add("incorrect");
+        secondsLeft = secondsLeft - 5;
+    }
+
+    questions.from(answerEl.children).forEach(button => {
+        if(button.dataset.correct === "true"){
+            button.classList.add("correct");
+        }
+        button.disabled = true;
+    });
+
+    nextEl.classList.remove("hide");
+}
+
+function showScore() {
+    resetState();
+    questionEl.innerHTML = "Score: " + [score] + "/" + "5.";
+    nextEl.innerHTML = "Play again"
+    nextEl.classList.add("hide");
+}
+
+function handleNextButton() {
+    currentQtnIndex++;
+    if(currentQtnIndex < questions.length){
+        showQtn();
+    }else{
+        showScore();
+    }
+}
+
+nextEl.addEventListener("click", () => {
+    if(currentQtnIndex < questions.length){
+        handleNextButton();
+    }else{
+        startQuiz
+    }
+
+});
+
