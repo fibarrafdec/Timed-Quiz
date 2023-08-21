@@ -76,8 +76,7 @@ function setTime() {
         timeEl.textContent = "Time: " + secondsLeft;
       
         if(secondsLeft === 0) {
-          clearInterval(timerInterval);
-          } 
+                gameOver();          } 
         
     }, 1000);
 }
