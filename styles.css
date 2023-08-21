@@ -86,7 +86,7 @@ header img {
     background-color: gray;
     border: solid navy 5px;
     border-radius: 15px;
-    height: 450px;
+    height: auto;
     width: 750px;
     margin: 25px;
     padding: 30px;
@@ -102,7 +102,7 @@ header img {
     background-color: blueviolet;
     border: solid aqua 5px;
     border-radius: 15px;
-    height: 450px;
+    height: auto;
     width: 750px;
     margin: 25px;
     padding: 30px;
@@ -117,7 +117,7 @@ header img {
     font-size: 20px;
 }
 
-.btn {
+.button {
     display: block;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-style: normal;
@@ -131,7 +131,7 @@ header img {
     cursor: pointer;
 }
 
-.btn:hover {
+.button:hover {
     display: block;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-style: italic;
@@ -155,7 +155,6 @@ header img {
 }
 
 .buttonNext {
-    display: none;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-style: normal;
     color: gray;
@@ -169,7 +168,6 @@ header img {
 }
 
 .buttonNext:hover {
-    display: block;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-style: italic;
     font-size: 20px;
@@ -185,7 +183,6 @@ header img {
 }
 
 .startButton {
-    display: block;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-style: normal;
     color: gray;
@@ -199,7 +196,6 @@ header img {
 }
 
 .startButton:hover {
-    display: block;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-style: italic;
     font-size: 20px;
